@@ -67,77 +67,71 @@
 #     st.rerun()
 # streamlit_app.py
 
+# streamlit_app.py
+
 import streamlit as st
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
+# Google Sheets setup
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-import json
-from io import StringIO
 
 creds_dict = json.loads(st.secrets["gcp_credentials"])
 creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 
 client = gspread.authorize(creds)
-SPREADSHEET_ID="1i_WpnrWuhGnAGWxDpWGh_BXHQi8ajdHHOzChGNSVpyE"
+SPREADSHEET_ID = "1i_WpnrWuhGnAGWxDpWGh_BXHQi8ajdHHOzChGNSVpyE"
 sheet = client.open_by_key(SPREADSHEET_ID).sheet1
 
+# Load tasks
 with open("tasks.json", "r") as f:
     tasks = json.load(f)
 
+# Initialize session state
 if "task_index" not in st.session_state:
     st.session_state.task_index = 0
 
-# Get current task safely
-if st.session_state.task_index < len(tasks):
-    task = tasks[st.session_state.task_index]
+# Check if all tasks are completed
+if st.session_state.task_index >= len(tasks):
+    st.markdown("🎉 All tasks completed! Thank you for your evaluations!")
+    st.stop()
 
-    st.title("LLM Human Evaluation")
+# Get current task
+task = tasks[st.session_state.task_index]
 
-    st.markdown(f"### 📌 Question:\n{task['question']}")
-    st.markdown(f"### 📄 Answer:\n{task['answer']}")
-    st.markdown(f"### 👤 User Profile:\n{task['user_profile']}")
+# Display progress
+st.title("LLM Human Evaluation")
+st.markdown(f"**Progress: {st.session_state.task_index + 1} / {len(tasks)}**")
 
-    # Likert ratings
-    specificity = st.slider("Specificity: How specific and detailed is the answer?", 1, 5, 3)
-    relevance = st.slider("Relevance: How relevant is the answer to the question?", 1, 5, 3)
-    robustness = st.slider("Robustness: Would the answer still hold if the question was paraphrased?", 1, 5, 3)
-    profile = st.slider("Profile Awareness: Does the answer reflect the user profile?", 1, 5, 3)
-    submitted = st.button("✅ Submit Rating")
+# Display task content
+st.markdown(f"### 📌 Question:\n{task['question']}")
+st.markdown(f"### 📄 Answer:\n{task['answer']}")
+st.markdown(f"### 👤 User Profile:\n{task['user_profile']}")
 
-    if submitted:
-        sheet.append_row([
-            task["question"],
-            task["answer"],
-            task["user_profile"],
-            specificity,
-            relevance,
-            robustness,
-            profile
-        ])
-        st.success("Rating submitted!")
+# Likert ratings
+specificity = st.slider("Specificity: How specific and detailed is the answer?", 1, 5, 3)
+relevance = st.slider("Relevance: How relevant is the answer to the question?", 1, 5, 3)
+robustness = st.slider("Robustness: Would the answer still hold if the question was paraphrased?", 1, 5, 3)
+profile = st.slider("Profile Awareness: Does the answer reflect the user profile?", 1, 5, 3)
+
+# Single submit button
+if st.button("✅ Submit Rating"):
+    # Save to Google Sheets
+    sheet.append_row([
+        task["question"],
+        task["answer"],
+        task["user_profile"],
+        specificity,
+        relevance,
+        robustness,
+        profile
+    ])
     
-        # Increment the task index BEFORE rerun
-        st.session_state.task_index += 1
-        st.experimental_rerun()
-    if st.button("✅ Submit Rating"):
-        sheet.append_row([
-            task["question"],
-            task["answer"],
-            task["user_profile"],
-            specificity,
-            relevance,
-            robustness,
-            profile
-        ])
-        st.success("Rating submitted!")
-
-        # Move to next task
-        if st.session_state.task_index + 1 < len(tasks):
-            st.session_state.task_index += 1
-            st.experimental_rerun()
-        else:
-            st.markdown("🎉 All tasks completed!")
-else:
-    st.markdown("🎉 All tasks completed!")
+    st.success("Rating submitted!")
+    
+    # Move to next task
+    st.session_state.task_index += 1
+    
+    # Rerun the app to show next question
+    st.rerun()
