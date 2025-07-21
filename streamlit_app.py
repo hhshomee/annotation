@@ -89,35 +89,39 @@ with open("tasks.json", "r") as f:
 if "task_index" not in st.session_state:
     st.session_state.task_index = 0
 
-task = tasks[st.session_state.task_index]
+# Get current task safely
+if st.session_state.task_index < len(tasks):
+    task = tasks[st.session_state.task_index]
 
-st.title("LLM Human Evaluation")
+    st.title("LLM Human Evaluation")
 
-st.markdown(f"### 📌 Question:\n{task['question']}")
-st.markdown(f"### 📄 Answer:\n{task['answer']}")
-st.markdown(f"### 👤 User Profile:\n{task['user_profile']}")
+    st.markdown(f"### 📌 Question:\n{task['question']}")
+    st.markdown(f"### 📄 Answer:\n{task['answer']}")
+    st.markdown(f"### 👤 User Profile:\n{task['user_profile']}")
 
-# Likert ratings
-specificity = st.slider("Specificity: How specific and detailed is the answer?", 1, 5, 3)
-relevance = st.slider("Relevance: How relevant is the answer to the question?", 1, 5, 3)
-robustness = st.slider("Robustness: Would the answer still hold if the question was paraphrased?", 1, 5, 3)
-profile = st.slider("Profile Awareness: Does the answer reflect the user profile?", 1, 5, 3)
+    # Likert ratings
+    specificity = st.slider("Specificity: How specific and detailed is the answer?", 1, 5, 3)
+    relevance = st.slider("Relevance: How relevant is the answer to the question?", 1, 5, 3)
+    robustness = st.slider("Robustness: Would the answer still hold if the question was paraphrased?", 1, 5, 3)
+    profile = st.slider("Profile Awareness: Does the answer reflect the user profile?", 1, 5, 3)
 
-if st.button("✅ Submit Rating"):
-    sheet.append_row([
-        task["question"],
-        task["answer"],
-        task["user_profile"],
-        specificity,
-        relevance,
-        robustness,
-        profile
-    ])
-    st.success("Rating submitted!")
+    if st.button("✅ Submit Rating"):
+        sheet.append_row([
+            task["question"],
+            task["answer"],
+            task["user_profile"],
+            specificity,
+            relevance,
+            robustness,
+            profile
+        ])
+        st.success("Rating submitted!")
 
-    # Move to next task
-    if st.session_state.task_index + 1 < len(tasks):
-        st.session_state.task_index += 1
-        st.experimental_rerun()
-    else:
-        st.markdown("🎉 All tasks completed!")
+        # Move to next task
+        if st.session_state.task_index + 1 < len(tasks):
+            st.session_state.task_index += 1
+            st.experimental_rerun()
+        else:
+            st.markdown("🎉 All tasks completed!")
+else:
+    st.markdown("🎉 All tasks completed!")
