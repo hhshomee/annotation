@@ -62,4 +62,4 @@ if st.button("✅ Submit Evaluation"):
     ])
     st.success("Submission recorded ✅")
     st.session_state.task_index += 1
-    st.experimental_rerun()
+    st.rerun()
