@@ -72,12 +72,15 @@ import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-# Google Sheets setup
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+import json
+from io import StringIO
+
 creds_dict = json.loads(st.secrets["gcp_credentials"])
 creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+
 client = gspread.authorize(creds)
-SPREADSHEET_ID = st.secrets["spreadsheet_id"]
+SPREADSHEET_ID="1i_WpnrWuhGnAGWxDpWGh_BXHQi8ajdHHOzChGNSVpyE"
 sheet = client.open_by_key(SPREADSHEET_ID).sheet1
 
 # Load task list (questions, answers, profiles)
