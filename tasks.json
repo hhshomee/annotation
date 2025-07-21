@@ -1,11 +1,12 @@
 [
   {
-    "id": "q1",
-    "query": "Which term correctly identifies those who enjoy programming/technology: geek or nerd?",
-    "ground_truth": "The term 'geek' is more appropriate based on usage...",
-    "response1": "Both 'geek' and 'nerd' can correctly identify...",
-    "response2": "The candidate answer, 'geek,' directly matches...",
-    "critique1": "Incorrectly equates geek and nerd...",
-    "critique2": "Aligns with ground truth, no critiques."
+    "question": "What precautions should elderly people take during a heatwave?",
+    "answer": "Elderly individuals should stay hydrated, avoid going outdoors during peak heat, use air conditioning or fans, and check in regularly with caregivers or family members.",
+    "user_profile": "Age: 75, Location: St. Louis, Profession: Retired teacher"
+  },
+  {
+    "question": "How should farmers prepare for a drought forecast?",
+    "answer": "Farmers should conserve water, consider switching to drought-resistant crops, monitor soil moisture levels, and apply mulch to reduce evaporation.",
+    "user_profile": "Location: Kansas, Profession: Farmer"
   }
 ]
