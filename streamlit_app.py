@@ -10,7 +10,12 @@ with open("tasks.json") as f:
 
 # Google Sheets setup
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("google-credentials.json", scope)
+import json
+from io import StringIO
+
+creds_dict = json.loads(st.secrets["gcp_credentials"])
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+
 client = gspread.authorize(creds)
 sheet = client.open("LLM_Human_Eval_Results").sheet1
 
