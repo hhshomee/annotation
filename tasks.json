@@ -1,0 +1,11 @@
+[
+  {
+    "id": "q1",
+    "query": "Which term correctly identifies those who enjoy programming/technology: geek or nerd?",
+    "ground_truth": "The term 'geek' is more appropriate based on usage...",
+    "response1": "Both 'geek' and 'nerd' can correctly identify...",
+    "response2": "The candidate answer, 'geek,' directly matches...",
+    "critique1": "Incorrectly equates geek and nerd...",
+    "critique2": "Aligns with ground truth, no critiques."
+  }
+]
