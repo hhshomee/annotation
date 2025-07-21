@@ -23,7 +23,9 @@ sheet = client.open_by_key(SPREADSHEET_ID).sheet1
 # Track progress
 if "task_index" not in st.session_state:
     st.session_state.task_index = 0
-
+if st.session_state.task_index >= len(tasks):
+    st.write("✅ All tasks completed. Thank you for your evaluations!")
+    st.stop()
 task = tasks[st.session_state.task_index]
 st.title("LLM Human Evaluation (Pairwise)")
 
