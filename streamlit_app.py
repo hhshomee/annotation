@@ -17,7 +17,7 @@ creds_dict = json.loads(st.secrets["gcp_credentials"])
 creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
 
 client = gspread.authorize(creds)
-SPREADSHEET_ID=1i_WpnrWuhGnAGWxDpWGh_BXHQi8ajdHHOzChGNSVpyE/edit?gid=0#gid=0
+SPREADSHEET_ID="1i_WpnrWuhGnAGWxDpWGh_BXHQi8ajdHHOzChGNSVpyE/edit?gid=0#gid=0"
 sheet = client.open_by_key(SPREADSHEET_ID).sheet1
 
 # Track progress
