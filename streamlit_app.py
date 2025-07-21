@@ -69,6 +69,8 @@
 
 # streamlit_app.py
 
+# streamlit_app.py
+
 import streamlit as st
 import json
 import gspread
@@ -91,6 +93,16 @@ with open("tasks.json", "r") as f:
 # Initialize session state
 if "task_index" not in st.session_state:
     st.session_state.task_index = 0
+
+# DEBUG INFO - Remove these lines once working
+st.write(f"🔍 DEBUG: Total tasks loaded: {len(tasks)}")
+st.write(f"🔍 DEBUG: Current task index: {st.session_state.task_index}")
+st.write(f"🔍 DEBUG: Task keys: {list(tasks[0].keys()) if tasks else 'No tasks'}")
+
+# Add a reset button for testing
+if st.button("🔄 Reset to First Task"):
+    st.session_state.task_index = 0
+    st.rerun()
 
 # Check if all tasks are completed
 if st.session_state.task_index >= len(tasks):
