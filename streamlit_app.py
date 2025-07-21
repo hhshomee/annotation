@@ -104,7 +104,23 @@ if st.session_state.task_index < len(tasks):
     relevance = st.slider("Relevance: How relevant is the answer to the question?", 1, 5, 3)
     robustness = st.slider("Robustness: Would the answer still hold if the question was paraphrased?", 1, 5, 3)
     profile = st.slider("Profile Awareness: Does the answer reflect the user profile?", 1, 5, 3)
+    submitted = st.button("✅ Submit Rating")
 
+    if submitted:
+        sheet.append_row([
+            task["question"],
+            task["answer"],
+            task["user_profile"],
+            specificity,
+            relevance,
+            robustness,
+            profile
+        ])
+        st.success("Rating submitted!")
+    
+        # Increment the task index BEFORE rerun
+        st.session_state.task_index += 1
+        st.experimental_rerun()
     if st.button("✅ Submit Rating"):
         sheet.append_row([
             task["question"],
