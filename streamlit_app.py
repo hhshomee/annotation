@@ -44,7 +44,7 @@ st.markdown(f"**Progress: {st.session_state.task_index + 1} / {len(tasks)}**")
 st.markdown("""
 ### 📋 Instructions
 Please carefully review the question, user profile, and answer provided. Then examine the knowledge sources that were used to generate the response. 
-Rate the quality of the answer across four key dimensions using the scales below. Your evaluation will help improve AI response quality.
+Rate the quality of the answer across four key dimensions using the scales below.
 """)
 
 st.markdown("---")
