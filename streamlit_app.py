@@ -156,7 +156,7 @@ with col2:  # Center the button
         
         # Move to next task
         st.session_state.task_index += 1
-        st.query_params.clear()
+        st.empty()
         # Rerun the app to show next question
         st.rerun()
         
