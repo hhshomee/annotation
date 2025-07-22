@@ -110,7 +110,7 @@ with metrics_col1:
         key="hazard_matching"
     )
 
-    with metrics_col2:
+  
     # st.markdown("""
     # **🧪 2. Does the Answer Mention Verifiable Factual Details from the Source?**  
     # *(e.g., "heat waves declared disaster in 2018," "911 dispatch data from Chicago," "homebound elderly at risk")*
