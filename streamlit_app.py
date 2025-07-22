@@ -100,10 +100,36 @@ with metrics_col1:
     - 1: Hazard Type Match -Does the answer correctly reflect the type of hazard discussed in the sources (e.g., heat waves, emergency dispatch patterns, urban heat islands)?
     - 2: Location Match 
     - 3: Timeline
-    -4: Intensity
+    - 4: Intensity
     """)
+    hazard_matching = st.selectbox(
+        "Rate Hazard Type Matching", 
+        ["No, hazard is incorrect or not discussed or different hazard is mentioned in sources",
+         "Partially correct (correct category but vague or overly general)", 
+         "Yes, matches specific hazard discussed"],
+        key="hazard_matching"
+    )
+
+    with metrics_col2:
+    # st.markdown("""
+    # **🧪 2. Does the Answer Mention Verifiable Factual Details from the Source?**  
+    # *(e.g., "heat waves declared disaster in 2018," "911 dispatch data from Chicago," "homebound elderly at risk")*
+    # - No verifiable facts or vague
+    # - 1–2 verifiable facts
+    # - 3 or more verifiable facts from sources
     
-    specificity = st.slider("Rate Specificity", 1, 5, 3, key="specificity")
+    # *(This acts as a **proxy for fine-grained claim-level specificity** but at a **categorical level**.)*
+    # """)
+    
+    verifiable_facts = st.selectbox(
+         "Rate Location, timeline, intensity Matching", 
+        ["No, hazard is incorrect or not discussed or different hazard is mentioned in sources",
+         "Partially correct (correct category but vague or overly general)", 
+         "Yes, matches specific hazard discussed"]
+        key="verifiable_facts"
+    )
+    
+    # specificity = st.slider("Rate Specificity", 1, 5, 3, key="specificity")
     
     st.markdown("""
     **💪 Robustness (1-5)**  
