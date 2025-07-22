@@ -159,16 +159,7 @@ with metrics_col2:
     
     relevance = st.slider("Rate Relevance", 1, 5, 3, key="relevance")
     
-    st.markdown("""
-    **👥 Profile Awareness (1-5)**  
-    *Does the answer reflect the user profile?*  
-    - 1: Ignores user context completely
-    - 3: Some consideration of user background
-    - 5: Perfectly tailored to user's situation
-    """)
     
-    profile = st.slider("Rate Profile Awareness", 1, 5, 3, key="profile")
-
 st.markdown("---")
 
 # NEXT BUTTON SECTION
