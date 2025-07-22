@@ -109,6 +109,13 @@ with metrics_col1:
          "Yes, matches specific hazard discussed"],
         key="hazard_matching"
     )
+    other_matching = st.selectbox(
+        "Rate Hazard Type Matching", 
+        ["No, hazard is incorrect or not discussed or different hazard is mentioned in sources",
+         "Partially correct (correct category but vague or overly general)", 
+         "Yes, matches specific hazard discussed"],
+        key="other_matching"
+    )
 
   
     # st.markdown("""
