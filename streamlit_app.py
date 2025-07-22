@@ -39,6 +39,7 @@ task = tasks[st.session_state.task_index]
 
 # INSTRUCTIONS AT TOP
 st.title("LLM Human Evaluation")
+st.markdown('<div id="top"></div>', unsafe_allow_html=True)
 progress_percentage = (st.session_state.task_index) / len(tasks)
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
@@ -156,7 +157,7 @@ with col2:  # Center the button
         
         # Move to next task
         st.session_state.task_index += 1
-        st.empty()
+        
         # Rerun the app to show next question
         st.rerun()
         
