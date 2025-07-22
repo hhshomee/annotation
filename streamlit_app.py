@@ -156,7 +156,7 @@ with col2:  # Center the button
         
         # Move to next task
         st.session_state.task_index += 1
-        st.markdown('<script>window.scrollTo(0, 0);</script>', unsafe_allow_html=True)
+        st.query_params.clear()
         # Rerun the app to show next question
         st.rerun()
         
