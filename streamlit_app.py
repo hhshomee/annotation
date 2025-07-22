@@ -96,10 +96,11 @@ metrics_col1, metrics_col2 = st.columns(2)
 with metrics_col1:
     st.markdown("""
     **🔍 Specificity (1-5)**  
-    *How specific and detailed is the answer?*  
-    - 1: Very vague, lacks detail
-    - 3: Moderate level of detail  
-    - 5: Highly specific with concrete details
+    *Specificity measures how precisely the answer includes verifiable specific details that are supported by the provided knowledge sources.*  
+    - 1: Hazard Type Match -Does the answer correctly reflect the type of hazard discussed in the sources (e.g., heat waves, emergency dispatch patterns, urban heat islands)?
+    - 2: Location Match 
+    - 3: Timeline
+    -4: Intensity
     """)
     
     specificity = st.slider("Rate Specificity", 1, 5, 3, key="specificity")
