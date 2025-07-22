@@ -156,14 +156,10 @@ with col2:  # Center the button
         
         # Move to next task
         st.session_state.task_index += 1
-        
+        st.markdown('<script>window.scrollTo(0, 0);</script>', unsafe_allow_html=True)
         # Rerun the app to show next question
         st.rerun()
-        st.components.v1.html("""
-        <script>
-            window.parent.document.querySelector('section.main').scrollTo(0, 0);
-        </script>
-        """, height=0)
+        
 
 # Reset button for testing (smaller, less prominent)
 if st.button("🔄 Reset to First Task", help="For testing purposes"):
