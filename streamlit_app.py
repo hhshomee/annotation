@@ -5,6 +5,12 @@ import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
+st.set_page_config(
+    page_title="LLM Human Evaluation",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
+
 # Google Sheets setup
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
