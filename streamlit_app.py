@@ -154,11 +154,15 @@ with col2:  # Center the button
         ])
         
         st.success("Rating submitted! ✅")
+        st.info("📍 Please scroll to the top of the page to see the next question.")
         
         # Move to next task
         st.session_state.task_index += 1
         
         # Rerun the app to show next question
+        import time
+        time.sleep(1)
+    
         st.rerun()
         
 
