@@ -63,13 +63,10 @@ with col_left:
     st.markdown("### 📄 Answer")
     st.markdown(task['answer'])
     st.header("📌 Paraphrased Question")
-    st.markdown(task['question'])
+    st.markdown(task['para_question'])
     
-    st.markdown("### 👤 User Profile")
-    st.markdown(task['user_profile'])
-    
-    st.markdown("### 📄 Answer")
-    st.markdown(task['answer'])
+    st.markdown("### 📄 Paraphrased Answer")
+    st.markdown(task['para_answer'])
 
 
 # RIGHT SIDE: Knowledge Sources
