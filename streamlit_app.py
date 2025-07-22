@@ -146,7 +146,7 @@ with metrics_col1:
     - 0: No – The answers are meaningfully different or contradict each other in facts, emphasis, or interpretation.
     """)
     
-    robustness = st.slider("Rate Robustness", 0, 1,0.5, key="robustness")
+    robustness = st.slider("Rate Robustness",0.0, 1.0, 0.5, step=0.1, key="robustness")
 
 with metrics_col2:
     st.markdown("""
