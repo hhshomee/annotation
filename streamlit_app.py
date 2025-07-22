@@ -146,18 +146,18 @@ with metrics_col1:
     - 5: Answer works well for similar questions
     """)
     
-    robustness = st.slider("Rate Robustness", 1, 5, 3, key="robustness")
+    robustness = st.slider("Rate Robustness", 1, 5,3 key="robustness")
 
 with metrics_col2:
     st.markdown("""
     **🎯 Relevance (1-5)**  
-    *How relevant is the answer to the question?*  
-    - 1: Completely off-topic
-    - 3: Partially addresses the question
-    - 5: Directly and fully addresses the question
+    *Robustness measures whether the answer maintains its meaning and factual accuracy when the question is paraphrased.*  
+    - 1: Yes – The answers are semantically equivalent. They convey the same information and preserve key factual content.
+    - 0.5: Partially – The answers are mostly similar but differ in minor facts or phrasing that could affect nuance or detail.
+    - 0: No – The answers are meaningfully different or contradict each other in facts, emphasis, or interpretation.
     """)
     
-    relevance = st.slider("Rate Relevance", 1, 5, 3, key="relevance")
+    relevance = st.slider("Rate Relevance", 0, 1, 0.5, key="relevance")
     
     st.markdown("""
     **👥 Profile Awareness (1-5)**  
