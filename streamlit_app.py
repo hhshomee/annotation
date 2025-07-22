@@ -97,20 +97,20 @@ with metrics_col1:
     st.markdown("""
     **🔍 Specificity (1-5)**  
     *Specificity measures how precisely the answer includes verifiable specific details that are supported by the provided knowledge sources.*  
-    - 1: Hazard Type Match -Does the answer correctly reflect the type of hazard discussed in the sources (e.g., heat waves, emergency dispatch patterns, urban heat islands)?
+    - 1: Hazard Type Match - Does the answer correctly reflect the type of hazard discussed in the sources (e.g., heat waves,snowstorms)?
     - 2: Location Match 
     - 3: Timeline
     - 4: Intensity
     """)
     hazard_matching = st.radio(
-        "Rate Hazard Type Matching", 
+        "**Rate Hazard Type Matching**", 
         ["No, hazard is incorrect or not discussed or different hazard is mentioned in sources",
          "Partially correct (correct category but vague or overly general)", 
          "Yes, matches specific hazard discussed"],
         key="hazard_matching"
     )
     other_matching = st.radio(
-        "Rate Location, timeline and Intensity", 
+        "**Rate Location, timeline and Intensity**", 
         ["No, the specific details are incorrect or not mentioned in sources",
          "Partially correct (correct category but vague or overly general)", 
          "Yes, matches specific details"],
