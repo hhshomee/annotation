@@ -140,13 +140,13 @@ with metrics_col1:
     
     st.markdown("""
     **💪 Robustness (1-5)**  
-    *Would the answer still hold if the question was paraphrased?*  
-    - 1: Answer is very fragile to rewording
-    - 3: Moderately robust to variations
-    - 5: Answer works well for similar questions
+    *Robustness measures whether the answer maintains its meaning and factual accuracy when the question is paraphrased.*  
+    - 1: Yes – The answers are semantically equivalent. They convey the same information and preserve key factual content.
+    -0.5: Partially – The answers are mostly similar but differ in minor facts or phrasing that could affect nuance or detail.
+    - 0: No – The answers are meaningfully different or contradict each other in facts, emphasis, or interpretation.
     """)
     
-    robustness = st.slider("Rate Robustness", 1, 5,3 key="robustness")
+    robustness = st.slider("Rate Robustness", 0, 1,0.5 key="robustness")
 
 with metrics_col2:
     st.markdown("""
