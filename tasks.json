@@ -1,7 +1,7 @@
 [
   {
     "question": "What are the critical vulnerabilities of emergency communications systems to heat wave in St. Louis, Missouri?",
-    "answer": '''mergency communications systems in St. Louis, Missouri, face several critical vulnerabilities during heat waves, which can be addressed by considering insights from the provided research abstracts.
+    "answer": "mergency communications systems in St. Louis, Missouri, face several critical vulnerabilities during heat waves, which can be addressed by considering insights from the provided research abstracts.
 
 1. **Impact of Heat Waves on Emergency Systems**: Heat waves are increasingly recognized as natural disasters due to their significant health impacts and frequency in areas previously unaffected, including urban centers like St. Louis. The infrastructure required to respond to heat waves is often insufficient, which can affect emergency communications systems (Characteristics of Heat Waves From a Disaster Perspective).
 
@@ -13,12 +13,12 @@
 
 5. **Socioeconomic Vulnerability**: The Extreme Heat Vulnerability Index (EHVI) can be used to model and predict areas in St. Louis that are socioeconomically vulnerable to heat waves. This model can inform emergency communications strategies by identifying neighborhoods that may require more resources and targeted messaging during extreme heat events (Sociospatial Modeling for Climate-Based Emergencies: Extreme Heat Vulnerability Index).
 
-''',
+",
     "user_profile": "Age: 75, Location: St. Louis, Profession: Retired teacher"
   },
   {
     "question": "How vulnerable is the stormwater system to drought in Sonoma, California?",
-    "answer": '''- As a Water Systems Engineer in Sonoma, California, your concern about the vulnerability of the stormwater system to drought is well-founded. The research indicates that climate change is expected to alter precipitation patterns, leading to less frequent but more intense storms. This could overwhelm existing stormwater infrastructure, which is not designed to handle such sudden influxes of water (Gershunov). This suggests a need for infrastructure adaptation to manage these changes effectively over the next 5-10 years.
+    "answer": "- As a Water Systems Engineer in Sonoma, California, your concern about the vulnerability of the stormwater system to drought is well-founded. The research indicates that climate change is expected to alter precipitation patterns, leading to less frequent but more intense storms. This could overwhelm existing stormwater infrastructure, which is not designed to handle such sudden influxes of water (Gershunov). This suggests a need for infrastructure adaptation to manage these changes effectively over the next 5-10 years.
 
 - The historical analysis of drought patterns in California shows that northern California, including Sonoma, experiences more frequent droughts with shorter recovery times compared to southern California (Revisiting hydrological drought propagation and recovery). This implies that while droughts may be more frequent, the recovery period is relatively shorter, which could influence the design and management of stormwater systems to ensure they are resilient to these fluctuations.
 
@@ -27,7 +27,7 @@
 - Droughts not only affect water quantity but also water quality, which can impact stormwater systems. During droughts, water quality can deteriorate, with increased temperatures and decreased dissolved oxygen levels, although some parameters like turbidity may improve (Revisiting hydrological drought propagation and recovery). This dual impact on water systems should be considered in your engineering solutions to ensure both quantity and quality are managed during drought conditions.
 
 - The broader implications of drought, such as increased fire risk and economic impacts, further highlight the importance of robust stormwater management systems (Toward a Drought Cyberinfrastructure System). As a professional in this field, you may need to advocate for and implement systems that not only manage stormwater effectively but also contribute to broader drought resilience strategies in Sonoma.
- ''',
+ ",
     "user_profile": "Location: Kansas, Profession: Farmer"
   }
 ]
