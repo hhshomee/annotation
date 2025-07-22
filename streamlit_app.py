@@ -150,14 +150,14 @@ with metrics_col1:
 
 with metrics_col2:
     st.markdown("""
-    **🎯 Relevance (1-5)**  
-    *Robustness measures whether the answer maintains its meaning and factual accuracy when the question is paraphrased.*  
-    - 1: Yes – The answers are semantically equivalent. They convey the same information and preserve key factual content.
-    - 0.5: Partially – The answers are mostly similar but differ in minor facts or phrasing that could affect nuance or detail.
-    - 0: No – The answers are meaningfully different or contradict each other in facts, emphasis, or interpretation.
+    **🎯 Relevance (0-1)**  
+    *Answer Relevance measures whether the answer is relevant to the question asked by the user.*  
+    - 1: Yes – The answer is relevant.
+    - 0.5: Partially - The answer partially address the concern of the user.
+    - 0: No – The answers are failed to address the question.
     """)
     
-    relevance = st.slider("Rate Relevance", 1, 5, 3, key="relevance")
+    relevance = st.slider("Rate Relevance",0.0, 1.0, 0.5, step=0.1, key="relevance")
     
     
 st.markdown("---")
