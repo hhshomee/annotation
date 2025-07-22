@@ -139,7 +139,7 @@ with metrics_col1:
     # specificity = st.slider("Rate Specificity", 1, 5, 3, key="specificity")
     
     st.markdown("""
-    **💪 Robustness (1-5)**  
+    **💪 Robustness (0-1)**  
     *Robustness measures whether the answer maintains its meaning and factual accuracy when the question is paraphrased.*  
     - 1: Yes – The answers are semantically equivalent. They convey the same information and preserve key factual content.
     - 0.5: Partially – The answers are mostly similar but differ in minor facts or phrasing that could affect nuance or detail.
@@ -157,7 +157,7 @@ with metrics_col2:
     - 0: No – The answers are meaningfully different or contradict each other in facts, emphasis, or interpretation.
     """)
     
-    relevance = st.slider("Rate Relevance", 0, 1, 0.5, key="relevance")
+    relevance = st.slider("Rate Relevance", 1, 5, 3, key="relevance")
     
     st.markdown("""
     **👥 Profile Awareness (1-5)**  
