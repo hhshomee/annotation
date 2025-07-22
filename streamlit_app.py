@@ -49,7 +49,7 @@ with col2:
 st.markdown("""
 ### 📋 Instructions
 Please carefully review the **question, user profile, and answer** provided. Then examine the **knowledge sources** that were used to generate the response. 
-Rate the quality of the answer across **four key dimensions** using the scales below. \\n Please make sure to scroll up after submitting ratings for one answer (it doesn't automatically show the top of the page).
+Rate the quality of the answer across **four key dimensions** using the scales below.\n Please make sure to scroll up after submitting ratings for one answer (it doesn't automatically show the top of the page).
 """)
 
 st.markdown("---")
