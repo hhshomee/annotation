@@ -159,6 +159,11 @@ with col2:  # Center the button
         
         # Rerun the app to show next question
         st.rerun()
+        st.components.v1.html("""
+        <script>
+            window.parent.document.querySelector('section.main').scrollTo(0, 0);
+        </script>
+        """, height=0)
 
 # Reset button for testing (smaller, less prominent)
 if st.button("🔄 Reset to First Task", help="For testing purposes"):
