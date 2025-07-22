@@ -39,7 +39,9 @@ task = tasks[st.session_state.task_index]
 
 # INSTRUCTIONS AT TOP
 st.title("LLM Human Evaluation")
-st.markdown(f"**Progress: {st.session_state.task_index + 1} / {len(tasks)}**")
+progress_percentage = (st.session_state.task_index + 1) / len(tasks)
+st.progress(progress_percentage)
+st.markdown(f"**Task {st.session_state.task_index + 1} of {len(tasks)}** ({int(progress_percentage * 100)}% Complete)")
 
 st.markdown("""
 ### 📋 Instructions
