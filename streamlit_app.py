@@ -40,8 +40,10 @@ task = tasks[st.session_state.task_index]
 # INSTRUCTIONS AT TOP
 st.title("LLM Human Evaluation")
 progress_percentage = (st.session_state.task_index + 1) / len(tasks)
-st.progress(progress_percentage)
-st.markdown(f"**Task {st.session_state.task_index + 1} of {len(tasks)}** ({int(progress_percentage * 100)}% Complete)")
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    st.progress(progress_percentage)
+    st.markdown(f"<div style='text-align: center; font-size: 18px; font-weight: bold;'>Task {st.session_state.task_index + 1} of {len(tasks)} ({int(progress_percentage * 100)}% Complete)</div>", unsafe_allow_html=True)
 
 st.markdown("""
 ### 📋 Instructions
