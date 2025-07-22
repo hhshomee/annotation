@@ -102,18 +102,18 @@ with metrics_col1:
     - 3: Timeline
     - 4: Intensity
     """)
-    hazard_matching = st.selectbox(
+    hazard_matching = st.radio(
         "Rate Hazard Type Matching", 
         ["No, hazard is incorrect or not discussed or different hazard is mentioned in sources",
          "Partially correct (correct category but vague or overly general)", 
          "Yes, matches specific hazard discussed"],
         key="hazard_matching"
     )
-    other_matching = st.selectbox(
-        "Rate Hazard Type Matching", 
-        ["No, hazard is incorrect or not discussed or different hazard is mentioned in sources",
+    other_matching = st.radio(
+        "Rate Location, timeline and Intensity", 
+        ["No, the specific details are incorrect or not mentioned in sources",
          "Partially correct (correct category but vague or overly general)", 
-         "Yes, matches specific hazard discussed"],
+         "Yes, matches specific details"],
         key="other_matching"
     )
 
