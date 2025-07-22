@@ -48,8 +48,8 @@ with col2:
 
 st.markdown("""
 ### 📋 Instructions
-Please carefully review the question, user profile, and answer provided. Then examine the knowledge sources that were used to generate the response. 
-Rate the quality of the answer across four key dimensions using the scales below.
+Please carefully review the **question, user profile, and answer** provided. Then examine the **knowledge sources** that were used to generate the response. 
+Rate the quality of the answer across **four key dimensions** using the scales below.
 """)
 
 st.markdown("---")
