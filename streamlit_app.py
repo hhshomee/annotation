@@ -111,19 +111,19 @@ with metrics_col1:
     )
 
   
-    # st.markdown("""
-    # **🧪 2. Does the Answer Mention Verifiable Factual Details from the Source?**  
-    # *(e.g., "heat waves declared disaster in 2018," "911 dispatch data from Chicago," "homebound elderly at risk")*
-    # - No verifiable facts or vague
-    # - 1–2 verifiable facts
-    # - 3 or more verifiable facts from sources
+    st.markdown("""
+    **🧪 2. Does the Answer Mention Verifiable Factual Details from the Source?**  
+    *(e.g., "heat waves declared disaster in 2018," "911 dispatch data from Chicago," "homebound elderly at risk")*
+    - No verifiable facts or vague
+    - 1–2 verifiable facts
+    - 3 or more verifiable facts from sources
     
-    # *(This acts as a **proxy for fine-grained claim-level specificity** but at a **categorical level**.)*
-    # """)
+    *(This acts as a **proxy for fine-grained claim-level specificity** but at a **categorical level**.)*
+    """)
     
     verifiable_facts = st.selectbox(
          "Rate Location, timeline, intensity Matching", 
-        ["No, hazard is incorrect or not discussed or different hazard is mentioned in sources",
+         ["No, hazard is incorrect or not discussed or different hazard is mentioned in sources",
          "Partially correct (correct category but vague or overly general)", 
          "Yes, matches specific hazard discussed"]
         key="verifiable_facts"
