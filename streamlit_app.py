@@ -169,6 +169,7 @@ with col2:  # Center the button
     if st.button("✅ Submit & Next", type="primary", use_container_width=True):
         # Save to Google Sheets
         sheet.append_row([
+            task["id"],
             task["question"],
             task["answer"], 
             task["user_profile"],
