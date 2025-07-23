@@ -3,6 +3,7 @@ from datetime import datetime
 import streamlit as st
 import json
 import gspread
+import pytz
 from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(
@@ -168,8 +169,10 @@ col1, col2, col3 = st.columns([1, 1, 1])
 with col2:  # Center the button
     if st.button("✅ Submit & Next", type="primary", use_container_width=True):
         # Save to Google Sheets
+        chicago_tz = pytz.timezone('America/Chicago')
+        chicago_time = datetime.now(chicago_tz)
         sheet.append_row([
-            datetime.now().isoformat(),
+            chicago_time.strftime("%Y-%m-%d %H:%M:%S %Z"),
             task["id"],
             task["question"],
             task["answer"], 
