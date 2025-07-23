@@ -172,7 +172,7 @@ with col2:  # Center the button
         chicago_tz = pytz.timezone('America/Chicago')
         chicago_time = datetime.now(chicago_tz)
         sheet.append_row([
-            chicago_time.strftime("%Y-%m-%d %H:%M:%S %Z"),
+            chicago_time.strftime("%B %d, %Y at %I:%M:%S %p %Z"),
             task["id"],
             task["question"],
             task["answer"], 
