@@ -172,10 +172,10 @@ with col2:  # Center the button
             task["question"],
             task["answer"], 
             task["user_profile"],
-            specificity,
+            hazard_matching,
+            other_matching,
             relevance,
-            robustness,
-            profile
+            robustness
         ])
         
         st.success("Rating submitted! ✅")
