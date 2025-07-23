@@ -203,7 +203,7 @@ with col2:  # Center the button
         
         # Rerun the app to show next question
         import time
-        time.sleep(1)
+        time.sleep(3)
     
         st.rerun()
         
