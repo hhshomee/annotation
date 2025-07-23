@@ -1,5 +1,5 @@
 # streamlit_app.py
-
+from datetime import datetime
 import streamlit as st
 import json
 import gspread
@@ -169,6 +169,7 @@ with col2:  # Center the button
     if st.button("✅ Submit & Next", type="primary", use_container_width=True):
         # Save to Google Sheets
         sheet.append_row([
+            datetime.now().isoformat(),
             task["id"],
             task["question"],
             task["answer"], 
